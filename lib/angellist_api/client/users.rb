@@ -12,8 +12,8 @@ module AngellistApi
       #
       # @example Get a user's information given an id.
       #   AngellistApi.get_user(1234)
-      def get_user(id)
-        get("1/users/#{id}")
+      def get_user(id, options = {})
+        get("1/users/#{id}#{"?include_details=" + options[:include_details]}")
       end
 
       # Get information for a batch of up to 50 users given a list of user IDs.
