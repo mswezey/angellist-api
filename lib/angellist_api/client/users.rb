@@ -13,7 +13,6 @@ module AngellistApi
       # @example Get a user's information given an id.
       #   AngellistApi.get_user(1234)
       def get_user(id, options = {})
-        "?include_details=" + }
         params = options[:include_details] ? {:include_details => options[:include_details]} : nil
         get("1/users/#{id}", params)
       end
